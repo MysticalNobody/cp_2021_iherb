@@ -1,0 +1,7 @@
+{
+  "language": "Русский",
+  "title": "IHerb",
+  "signIn": "Вход",
+  "register": "Зарегистрировать",
+  "hello": "Привет {username}"
+}

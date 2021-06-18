@@ -1,0 +1,18 @@
+{
+  "language": "English",
+  "@language":{
+    "description": "The current Language"
+  },
+  "title": "IHerb",
+  "signIn": "Sign In",
+  "register": "Register",
+  "hello": "Hello {username}",
+  "@hello": {
+    "description": "A welcome message",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  }
+}
