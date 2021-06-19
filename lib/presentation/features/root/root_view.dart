@@ -12,8 +12,9 @@ class RootView extends StatelessWidget {
       builder: (context, model, child) {
         return Container();
       },
-      viewModelBuilder: () =>
-          RootViewModel(service: context.read<AuthService>()),
+      viewModelBuilder: () => RootViewModel(
+        service: context.read<AuthService>(),
+      ),
     );
   }
 }

@@ -6,9 +6,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:iherb/generated/l10n.dart';
 import 'package:iherb/l10n/locale_service.dart';
-import 'package:stacked_themes/stacked_themes.dart';
+import 'package:iherb/presentation/theme/app_colors.dart';
 import '../presentation/navigation/app_route.gr.dart';
-import '../presentation/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -17,54 +16,70 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appName = env['APP_NAME']!;
-    return ThemeBuilder(
-        defaultThemeMode: ThemeMode.light,
-        lightTheme: AppTheme.lightTheme,
-        builder: (context, regularTheme, darkTheme, themeMode) {
-          if (Platform.isAndroid) {
-            return MaterialApp.router(
-              title: appName,
-              debugShowCheckedModeBanner: false,
+    if (Platform.isAndroid) {
+      return MaterialApp.router(
+        title: appName,
+        debugShowCheckedModeBanner: false,
 
-              //navigation
-              routerDelegate: router.delegate(),
-              routeInformationParser: router.defaultRouteParser(),
+        //navigation
+        routerDelegate: router.delegate(),
+        routeInformationParser: router.defaultRouteParser(),
 
-              //internalization
-              locale: context.watch<LocaleProvider>().locale,
-              supportedLocales: S.delegate.supportedLocales,
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate
-              ],
+        //internalization
+        locale: context.watch<LocaleProvider>().locale,
+        supportedLocales: S.delegate.supportedLocales,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
 
-              //theming
-              theme: regularTheme,
-              darkTheme: darkTheme,
-              themeMode: themeMode,
-            );
-          } else {
-            return CupertinoApp.router(
-              title: appName,
-              debugShowCheckedModeBanner: false,
+        //theming
+        color: AppColor.primary,
+        theme: ThemeData.from(
+          colorScheme: ColorScheme(
+            primary: AppColor.primary,
+            primaryVariant: AppColor.primary,
+            secondary: AppColor.subTitleTextColor,
+            secondaryVariant: AppColor.subTitleTextColor,
+            surface: AppColor.white,
+            background: AppColor.bg,
+            error: AppColor.red,
+            onPrimary: AppColor.white,
+            onSecondary: AppColor.white,
+            onSurface: AppColor.primary,
+            onBackground: AppColor.primary,
+            onError: AppColor.white,
+            brightness: Brightness.light,
+          ),
+        ),
+      );
+    } else {
+      return CupertinoApp.router(
+        title: appName,
+        debugShowCheckedModeBanner: false,
+        //internalization
+        locale: context.watch<LocaleProvider>().locale,
+        supportedLocales: S.delegate.supportedLocales,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        //navigation
+        routerDelegate: router.delegate(),
+        routeInformationParser: router.defaultRouteParser(),
 
-              //internalization
-              locale: context.watch<LocaleProvider>().locale,
-              supportedLocales: S.delegate.supportedLocales,
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate
-              ],
-
-              //navigation
-              routerDelegate: router.delegate(),
-              routeInformationParser: router.defaultRouteParser(),
-            );
-          }
-        });
+        //theming
+        color: AppColor.primary,
+        theme: CupertinoThemeData(
+          barBackgroundColor: AppColor.white,
+          brightness: Brightness.light,
+          primaryColor: AppColor.primary,
+        ),
+      );
+    }
   }
 }

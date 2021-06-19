@@ -6,8 +6,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 
-import '../features/home/home_view.dart' as _i5;
-import '../features/login/login_view.dart' as _i4;
+import '../features/home/home_view.dart' as _i4;
 import '../features/root/root_view.dart' as _i3;
 import '../features/splash/splash_view.dart' as _i2;
 
@@ -23,11 +22,8 @@ class AppRoutes extends _i1.RootStackRouter {
     RootViewRoute.name: (entry) {
       return _i1.AdaptivePage(entry: entry, child: _i3.RootView());
     },
-    LoginViewRoute.name: (entry) {
-      return _i1.AdaptivePage(entry: entry, child: _i4.LoginView());
-    },
     HomeViewRoute.name: (entry) {
-      return _i1.AdaptivePage(entry: entry, child: _i5.HomeView());
+      return _i1.AdaptivePage(entry: entry, child: _i4.HomeView());
     }
   };
 
@@ -35,7 +31,6 @@ class AppRoutes extends _i1.RootStackRouter {
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(SplashViewRoute.name, path: '/'),
         _i1.RouteConfig(RootViewRoute.name, path: '/root-view'),
-        _i1.RouteConfig(LoginViewRoute.name, path: '/login-view'),
         _i1.RouteConfig(HomeViewRoute.name, path: '/home-view')
       ];
 }
@@ -50,12 +45,6 @@ class RootViewRoute extends _i1.PageRouteInfo {
   const RootViewRoute() : super(name, path: '/root-view');
 
   static const String name = 'RootViewRoute';
-}
-
-class LoginViewRoute extends _i1.PageRouteInfo {
-  const LoginViewRoute() : super(name, path: '/login-view');
-
-  static const String name = 'LoginViewRoute';
 }
 
 class HomeViewRoute extends _i1.PageRouteInfo {

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:stacked/stacked.dart';
 import 'package:iherb/core/utils/alert_action.dart';
 import 'package:iherb/core/utils/daialog_util.dart';

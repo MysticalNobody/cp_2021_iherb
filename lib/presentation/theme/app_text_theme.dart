@@ -1,8 +1,7 @@
 import 'app_colors.dart';
 import 'package:flutter/material.dart';
 
-
-class AppTextTheme{
+class AppTextTheme {
   static final TextTheme lightTextTheme = TextTheme(
     headline1: _headline1,
     headline2: _headline2,
@@ -28,7 +27,7 @@ class AppTextTheme{
     subtitle1: _subtitle1.copyWith(color: Colors.white),
     subtitle2: _subtitle2.copyWith(color: Colors.white),
     bodyText1: _bodyText1.copyWith(color: AppColor.primary),
-    bodyText2: _bodyText2.copyWith(color: AppColor.secondaryBg),
+    bodyText2: _bodyText2.copyWith(color: Colors.white),
   );
   static final TextStyle _headline1 = TextStyle(
     color: AppColor.headlineTextColor,
@@ -97,6 +96,5 @@ class AppTextTheme{
     fontFamily: "Poppins",
     fontSize: 12,
     letterSpacing: 1,
-
   );
 }

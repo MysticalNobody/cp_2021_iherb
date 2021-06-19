@@ -5,7 +5,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:iherb/app/modules/auth.dart';
 import 'package:iherb/app/modules/other.dart';
-import 'package:stacked_themes/stacked_themes.dart';
 
 import 'app/app.dart';
 import 'app/dependency.dart';
@@ -17,12 +16,13 @@ void main() async {
   Provider.debugCheckInvalidValueType = null;
   await Hive.initFlutter();
   Hive.registerAdapter(AuthModelAdapter());
-  await ThemeManager.initialise();
-  runApp(AppDependencies(
-    app: App(),
-    modules: [
-      OtherModule(),
-      AuthModule(),
-    ],
-  ));
+  runApp(
+    AppDependencies(
+      app: App(),
+      modules: [
+        OtherModule(),
+        AuthModule(),
+      ],
+    ),
+  );
 }
