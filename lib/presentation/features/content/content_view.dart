@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'content_viewmodel.dart';
 import 'widgets/appbar.dart';
 import 'widgets/article_card.dart';
+import 'widgets/good_card.dart';
 
 class ContentView extends StatelessWidget {
   @override
@@ -39,12 +40,7 @@ class ContentView extends StatelessWidget {
                   return ArticleCard(item);
                 }
                 if (item is GoodModel) {
-                  return Container(
-                    width: double.infinity,
-                    height: 100,
-                    color: AppColor.blue,
-                    child: Text(item.title),
-                  );
+                  return GoodCard(item);
                 }
                 if (item is QuizModel) {
                   return Container(
