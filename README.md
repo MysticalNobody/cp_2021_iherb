@@ -44,7 +44,7 @@ IOS - **8**
 
 Скачать APK (Android)
 
-https://tod.itis.team/android.apk
+https://tod.itis.team/android.apk (в процессе)
 
 
 ## Сборка
@@ -57,7 +57,7 @@ https://flutter.dev/docs/get-started/install
 
 https://flutter.dev/docs/get-started/editor?tab=vscode
 
-После базовой настройки для запуска необходимо выполнить следующие команды(для Android):
+После базовой настройки для запуска необходимо выполнить следующие команды (для Android):
 
 > cd *project dir*
 
