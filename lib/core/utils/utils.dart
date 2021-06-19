@@ -19,4 +19,8 @@ class Utils {
     if (str.isEmpty) return '0';
     return str;
   }
+
+  static bool isSameDate(DateTime a, DateTime b) {
+    return a.day == b.day && a.month == b.month && a.year == b.year;
+  }
 }
