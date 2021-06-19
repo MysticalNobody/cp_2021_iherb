@@ -35,7 +35,13 @@ class ContentView extends StatelessWidget {
               ),
               separatorBuilder: (context, index) => SizedBox(height: 15),
               itemBuilder: (context, index) {
-                final item = model.items[index];
+                if (index == 0) {
+                  return Image.asset(
+                    'assets/images/anal.png',
+                    width: double.infinity,
+                  );
+                }
+                final item = model.items[index - 1];
                 if (item is ArticleModel) {
                   return ArticleCard(item);
                 }
