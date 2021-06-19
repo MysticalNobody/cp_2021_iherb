@@ -45,9 +45,10 @@ class Topbar extends StatelessWidget {
               .clamp(0.0, 1.0);
 
           final double paddingValue =
-              Tween<double>(begin: 42, end: 0).transform(t);
+              Tween<double>(begin: 42 + (hasLeading ? 12 : 0), end: 0)
+                  .transform(t);
           final double textSizeValue =
-              Tween<double>(begin: 32, end: 20).transform(t);
+              Tween<double>(begin: 26, end: 16).transform(t);
           final double scaleValue =
               Tween<double>(begin: 1.5, end: 1.0).transform(t);
           final double leadingTitlePadding =
@@ -80,13 +81,11 @@ class Topbar extends StatelessWidget {
                       ),
                       child: Material(
                         child: InkWell(
-                          onTap: onPop!(),
+                          onTap: () => onPop!(),
                           child: Icon(
-                            leadingRight
-                                ? Icons.close
-                                : Icons.arrow_back_ios_rounded,
-                            size: 18,
-                            color: AppColor.primary,
+                            leadingRight ? Icons.close : Icons.arrow_back,
+                            size: 34,
+                            color: AppColor.primary.withOpacity(.3),
                           ),
                         ),
                       ),
@@ -95,16 +94,8 @@ class Topbar extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     top: paddingValue,
-                    left: hasLeading
-                        ? leadingRight
-                            ? leadingTitlePadding
-                            : 68
-                        : 24,
-                    right: hasLeading
-                        ? leadingRight
-                            ? 68
-                            : leadingTitlePadding
-                        : 24,
+                    left: 24,
+                    right: 24,
                   ),
                   child: Transform(
                     alignment: titleAlignment,
@@ -117,7 +108,6 @@ class Topbar extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          fontFamily: "Arial",
                         ).copyWith(fontSize: textSizeValue),
                       ),
                     ),
