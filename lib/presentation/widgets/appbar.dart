@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
 import 'package:iherb/presentation/theme/app_text_theme.dart';
@@ -48,7 +49,7 @@ class Topbar extends StatelessWidget {
               Tween<double>(begin: 42 + (hasLeading ? 12 : 0), end: 0)
                   .transform(t);
           final double textSizeValue =
-              Tween<double>(begin: 26, end: 16).transform(t);
+              Tween<double>(begin: 24, end: 16).transform(t);
           final double scaleValue =
               Tween<double>(begin: 1.5, end: 1.0).transform(t);
           final double leadingTitlePadding =
@@ -74,19 +75,14 @@ class Topbar extends StatelessWidget {
                         right: leadingRight ? 16 : 0,
                         top: 10,
                       ),
-                      clipBehavior: Clip.hardEdge,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColor.primary,
-                      ),
-                      child: Material(
-                        child: InkWell(
-                          onTap: () => onPop!(),
-                          child: Icon(
-                            leadingRight ? Icons.close : Icons.arrow_back,
-                            size: 34,
-                            color: AppColor.primary.withOpacity(.3),
-                          ),
+                      child: CupertinoButton(
+                        minSize: 0,
+                        padding: EdgeInsets.zero,
+                        onPressed: () => onPop!(),
+                        child: Icon(
+                          leadingRight ? Icons.close : Icons.arrow_back,
+                          size: 34,
+                          color: AppColor.primary.withOpacity(.3),
                         ),
                       ),
                     ),
@@ -107,6 +103,7 @@ class Topbar extends StatelessWidget {
                         title,
                         style: TextStyle(
                           fontSize: 12,
+                          fontFamily: 'Arial',
                           fontWeight: FontWeight.bold,
                         ).copyWith(fontSize: textSizeValue),
                       ),
