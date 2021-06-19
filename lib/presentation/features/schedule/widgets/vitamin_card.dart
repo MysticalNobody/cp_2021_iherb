@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:iherb/core/utils/utils.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
 
 class VitaminCard extends StatefulWidget {
@@ -168,7 +169,7 @@ class _VitaminCardState extends State<VitaminCard> {
                           ),
                         ),
                         Text(
-                          '${widget.time.hour}:${widget.time.minute}',
+                          '${Utils.twoDigits(widget.time.hour)}:${Utils.twoDigits(widget.time.minute)}',
                           style: TextStyle(
                             fontSize: 64,
                             color: Colors.white,
