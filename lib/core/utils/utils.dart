@@ -35,4 +35,16 @@ class Utils {
       'ВС',
     ][weekday - 1];
   }
+
+  static String getWeekdayFullName(int weekday) {
+    return [
+      'ПОНЕДЕЛЬНИК',
+      'ВТОРНИК',
+      'СРЕДА',
+      'ЧЕТВЕРГ',
+      'ПЯТНИЦА',
+      'СУББОТА',
+      'ВОСКРЕСЕНЬЕ',
+    ][weekday - 1];
+  }
 }
