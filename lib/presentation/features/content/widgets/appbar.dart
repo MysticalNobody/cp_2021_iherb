@@ -8,15 +8,18 @@ class ContentAppbar extends StatelessWidget {
     required this.page,
     required this.titles,
     required this.onTap,
+    this.hasQuizes = false,
   }) : super(key: key);
 
   final int page;
   final List<String> titles;
   final void Function(int index) onTap;
+  final bool hasQuizes;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SafeArea(
           bottom: false,
@@ -27,29 +30,50 @@ class ContentAppbar extends StatelessWidget {
           child: Text('СЕГОДНЯ ДЛЯ ВАС'),
         ),
         SizedBox(
-          height: 35,
+          height: 40,
           child: ListView.separated(
             itemCount: titles.length,
             padding: EdgeInsets.symmetric(horizontal: 24),
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 9),
             itemBuilder: (context, index) {
+              final withRedCircle = hasQuizes && index == 3;
               return CupertinoButton(
                 onPressed: () => onTap(index),
                 minSize: 0,
                 padding: EdgeInsets.zero,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.5),
-                    color: page == index ? AppColor.primary : AppColor.white,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 13,
-                      vertical: 9,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 1),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18.5),
+                          color: page == index ? AppColor.primary : AppColor.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 13,
+                            vertical: 9,
+                          ),
+                          child: Text(titles[index]),
+                        ),
+                      ),
                     ),
-                    child: Text(titles[index]),
-                  ),
+                    Positioned(
+                      right: 0,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: withRedCircle ? AppColor.red : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: SizedBox(
+                          height: 12,
+                          width: 12,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
