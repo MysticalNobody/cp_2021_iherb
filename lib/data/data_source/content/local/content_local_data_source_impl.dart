@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:iherb/data/models/article_model.dart';
 import 'package:iherb/data/models/good_model.dart';
@@ -40,6 +41,7 @@ class ContentLocalDataSourceImpl implements ContentLocalDataSource {
         photo: 'https://s3.images-iherb.com/now/now00367/w/10.jpg',
         tags: ['опросы', 'люди'],
         title: 'Насколько вы знаете себя? Готовы проверить?',
+        color: Color(0xFF367599),
       ),
     ];
   }

@@ -9,6 +9,7 @@ import 'package:iherb/presentation/widgets/reactive_scaffold.dart';
 import 'package:provider/provider.dart';
 import 'content_viewmodel.dart';
 import 'widgets/appbar.dart';
+import 'widgets/article_card.dart';
 
 class ContentView extends StatelessWidget {
   @override
@@ -35,12 +36,7 @@ class ContentView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final item = model.items[index];
                 if (item is ArticleModel) {
-                  return Container(
-                    width: double.infinity,
-                    height: 100,
-                    color: AppColor.blue,
-                    child: Text(item.title),
-                  );
+                  return ArticleCard(item);
                 }
                 if (item is GoodModel) {
                   return Container(
