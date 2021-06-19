@@ -5,4 +5,11 @@ class ProfileViewModel extends BaseViewModel {
   ProfileViewModel();
 
   final log = getLogger('ProfileViewModel');
+
+  bool remind = true;
+
+  void setRemind(bool remind) {
+    this.remind = remind;
+    notifyListeners();
+  }
 }
