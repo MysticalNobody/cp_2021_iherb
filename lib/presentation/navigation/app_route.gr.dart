@@ -7,6 +7,7 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 
 import '../features/home/home_view.dart' as _i4;
+import '../features/main_data_profile/main_data_profile_view.dart' as _i5;
 import '../features/root/root_view.dart' as _i3;
 import '../features/splash/splash_view.dart' as _i2;
 
@@ -24,6 +25,10 @@ class AppRoutes extends _i1.RootStackRouter {
     },
     HomeViewRoute.name: (entry) {
       return _i1.AdaptivePage(entry: entry, child: _i4.HomeView());
+    },
+    MainDataProfileViewRoute.name: (entry) {
+      return _i1.AdaptivePage(
+          entry: entry, child: const _i5.MainDataProfileView());
     }
   };
 
@@ -31,7 +36,9 @@ class AppRoutes extends _i1.RootStackRouter {
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(SplashViewRoute.name, path: '/'),
         _i1.RouteConfig(RootViewRoute.name, path: '/root-view'),
-        _i1.RouteConfig(HomeViewRoute.name, path: '/home-view')
+        _i1.RouteConfig(HomeViewRoute.name, path: '/home-view'),
+        _i1.RouteConfig(MainDataProfileViewRoute.name,
+            path: '/main-data-profile-view')
       ];
 }
 
@@ -51,4 +58,11 @@ class HomeViewRoute extends _i1.PageRouteInfo {
   const HomeViewRoute() : super(name, path: '/home-view');
 
   static const String name = 'HomeViewRoute';
+}
+
+class MainDataProfileViewRoute extends _i1.PageRouteInfo {
+  const MainDataProfileViewRoute()
+      : super(name, path: '/main-data-profile-view');
+
+  static const String name = 'MainDataProfileViewRoute';
 }
