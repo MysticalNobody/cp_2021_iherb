@@ -8,6 +8,7 @@ import 'package:iherb/app/modules/other.dart';
 
 import 'app/app.dart';
 import 'app/dependency.dart';
+import 'app/modules/content.dart';
 import 'data/models/auth_model.dart';
 
 void main() async {
@@ -22,6 +23,7 @@ void main() async {
       modules: [
         OtherModule(),
         AuthModule(),
+        ContentModule(),
       ],
     ),
   );
