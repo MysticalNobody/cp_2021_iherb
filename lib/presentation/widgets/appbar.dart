@@ -114,9 +114,11 @@ class Topbar extends StatelessWidget {
                       width: constraints.maxWidth / scaleValue,
                       child: Text(
                         title,
-                        style:
-                            TextStyle(fontSize: 12, fontWeight: FontWeight.bold)
-                                .copyWith(fontSize: textSizeValue),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Arial",
+                        ).copyWith(fontSize: textSizeValue),
                       ),
                     ),
                   ),

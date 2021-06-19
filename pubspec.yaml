@@ -65,6 +65,11 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - assets/fonts/
+  fonts:
+    - family: Arial
+      fonts:
+        - asset: assets/fonts/arial.ttf
 
 flutter_intl:
   enabled: true

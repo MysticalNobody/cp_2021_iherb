@@ -15,7 +15,10 @@ class ProfileView extends StatelessWidget {
         viewModelBuilder: () => ProfileViewModel(),
         body: (context, viewModel, _) => CustomScrollView(
           slivers: [
-            Topbar(title: 'ВАШ ПРОФИЛЬ', bg: AppColor.bg),
+            Topbar(
+              title: 'ВАШ ПРОФИЛЬ',
+              bg: AppColor.bg,
+            ),
             SliverPadding(
               padding:
                   EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
@@ -30,16 +33,20 @@ class ProfileView extends StatelessWidget {
                         Text(
                           'Основные данные',
                           style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontFamily: "Arial",
+                          ),
                         ),
                         SizedBox(height: 2),
                         Text(
                           'Пол, рост, вес, заболевания и т.д.',
                           style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black.withOpacity(.3)),
+                            fontSize: 15,
+                            color: Colors.black.withOpacity(.3),
+                            fontFamily: "Arial",
+                          ),
                         )
                       ],
                     ),
@@ -53,7 +60,10 @@ class ProfileView extends StatelessWidget {
                   [
                     Text('УВЕДОМЛЕНИЯ',
                         style: TextStyle(
-                            fontSize: 14, color: Colors.black.withOpacity(.3))),
+                          fontSize: 14,
+                          color: Colors.black.withOpacity(.3),
+                          fontFamily: "Arial",
+                        )),
                     SizedBox(height: 13),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -65,8 +75,11 @@ class ProfileView extends StatelessWidget {
                           children: [
                             Text(
                               'Напоминать о приеме',
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontFamily: "Arial",
+                              ),
                             ),
                             CupertinoSwitch(
                               value: viewModel.remind,
@@ -90,14 +103,19 @@ class ProfileView extends StatelessWidget {
                           children: [
                             Text(
                               'Время',
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontFamily: "Arial",
+                              ),
                             ),
                             Text(
                               'За 5 мин',
                               style: TextStyle(
-                                  fontSize: 17,
-                                  color: Colors.black.withOpacity(.3)),
+                                fontSize: 17,
+                                color: Colors.black.withOpacity(.3),
+                                fontFamily: "Arial",
+                              ),
                             ),
                           ],
                         ),

@@ -31,69 +31,69 @@ class AppTextTheme {
   );
   static final TextStyle _headline1 = TextStyle(
     color: AppColor.headlineTextColor,
-    fontFamily: "DellaRespira",
+    fontFamily: "Arial",
     fontSize: 48,
   );
   static final TextStyle _headline2 = TextStyle(
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     color: AppColor.headlineTextColor,
     fontSize: 32,
   );
   static final TextStyle _headline3 = TextStyle(
     color: AppColor.headlineTextColor,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 24,
   );
   static final TextStyle _headline4 = TextStyle(
     color: AppColor.headlineTextColor,
     fontWeight: FontWeight.w900,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 18,
   );
   static final TextStyle _headline5 = TextStyle(
     color: AppColor.headlineTextColor,
     fontWeight: FontWeight.w900,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 16,
   );
   static final TextStyle _headline6 = TextStyle(
     color: AppColor.subTitleTextColor,
     fontWeight: FontWeight.w600,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 16,
   );
 
   static final TextStyle _button = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w900,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 18,
   );
 
   static final TextStyle _subtitle1 = TextStyle(
     color: AppColor.headlineTextColor,
     fontWeight: FontWeight.w900,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 14,
   );
 
   static final TextStyle _subtitle2 = TextStyle(
     color: AppColor.subTitleTextColor,
     fontWeight: FontWeight.w900,
-    fontFamily: "Lato",
+    fontFamily: "Arial",
     fontSize: 14,
   );
 
   static final TextStyle _bodyText1 = TextStyle(
     color: AppColor.headlineTextColor,
-    fontFamily: "Poppins",
+    fontFamily: "Arial",
     fontSize: 12,
     letterSpacing: 1,
   );
 
   static final TextStyle _bodyText2 = TextStyle(
     color: AppColor.subTitleTextColor,
-    fontFamily: "Poppins",
+    fontFamily: "Arial",
     fontSize: 12,
     letterSpacing: 1,
   );
