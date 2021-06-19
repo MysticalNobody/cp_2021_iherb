@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iherb/core/utils/utils.dart';
-import 'package:iherb/presentation/theme/app_colors.dart';
+import 'package:iherb/presentation/features/schedule/widgets/vitamin_card.dart';
 import 'package:iherb/presentation/widgets/reactive_scaffold.dart';
-import 'package:jiffy/jiffy.dart';
 
 import 'schedule_viewmodel.dart';
 import 'widgets/appbar.dart';
@@ -13,14 +11,30 @@ class ScheduleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ReactiveScaffold<ScheduleViewModel>(
       viewModelBuilder: () => ScheduleViewModel(),
-      body: (context, model, _) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: (context, model, _) => Stack(
         children: [
+          ListView.separated(
+            padding: EdgeInsets.only(bottom: 30, top: 240),
+            itemCount: model.vitamins.length,
+            separatorBuilder: (context, index) => const SizedBox(height: 15),
+            physics: BouncingScrollPhysics(),
+            itemBuilder: (context, index) {
+              final vitamin = model.vitamins[index];
+              return VitaminCard(
+                vitaminAsset: vitamin.asset,
+                count: vitamin.count,
+                when: vitamin.when,
+                name: vitamin.name,
+                time: vitamin.time,
+                colors: vitamin.colors,
+              );
+            },
+          ),
           ScheduleAppBar(
             selectedDate: model.selectedDate,
             onChangeDate: model.selectDate,
-            onTabTap: (_) {},
-            tabIndex: 1,
+            onTabTap: model.selectTab,
+            tabIndex: model.selectedTab,
           ),
         ],
       ),
