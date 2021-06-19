@@ -19,7 +19,7 @@ class ScheduleView extends StatelessWidget {
           ),
           SizedBox(height: 22),
           SizedBox(
-            height: 63,
+            height: 65,
             child: ListView.separated(
               itemCount: 1000,
               reverse: true,
@@ -52,7 +52,7 @@ class ScheduleView extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            day.weekday.toString(),
+                            Utils.getWeekdayName(day.weekday),
                             style: TextStyle(
                               fontSize: 12,
                               color: selected ? Colors.white : Color(0xFFB6C4D8),
@@ -60,7 +60,7 @@ class ScheduleView extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          const SizedBox(height: 6),
+                          const SizedBox(height: 8),
                           Text(
                             day.day.toString(),
                             style: TextStyle(
