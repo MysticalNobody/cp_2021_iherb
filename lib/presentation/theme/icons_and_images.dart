@@ -18,8 +18,9 @@ class AppIcons{
   static const iconsCalendar = "assets/icons/calendar.svg";
 static const iconsHome = "assets/icons/home.svg";
 static const iconsProfile = "assets/icons/profile.svg";
+static const iconsSearch = "assets/icons/search.svg";
 }
 
 class AppImages{
-    
+  static const imagesAnal = "assets/images/anal.png";  
 }

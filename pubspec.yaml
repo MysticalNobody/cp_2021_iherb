@@ -70,6 +70,9 @@ flutter:
     - family: Arial
       fonts:
         - asset: assets/fonts/arial.ttf
+    - family: ArialBlack
+      fonts:
+        - asset: assets/fonts/arial_black.ttf
 
 flutter_intl:
   enabled: true

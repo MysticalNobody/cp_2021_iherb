@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
+import 'package:iherb/presentation/theme/icons_and_images.dart';
 
 class ContentAppbar extends StatelessWidget {
   const ContentAppbar({
@@ -27,7 +29,21 @@ class ContentAppbar extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.all(24),
-          child: Text('СЕГОДНЯ ДЛЯ ВАС'),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'СЕГОДНЯ ДЛЯ ВАС',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.black,
+                  fontFamily: "Arial",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              SvgPicture.asset(AppIcons.iconsSearch),
+            ],
+          ),
         ),
         SizedBox(
           height: 40,
@@ -56,7 +72,14 @@ class ContentAppbar extends StatelessWidget {
                             horizontal: 13,
                             vertical: 9,
                           ),
-                          child: Text(titles[index]),
+                          child: Text(
+                            titles[index],
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: page == index ? Colors.white : Colors.black.withOpacity(0.7),
+                              fontFamily: "Arial",
+                            ),
+                          ),
                         ),
                       ),
                     ),

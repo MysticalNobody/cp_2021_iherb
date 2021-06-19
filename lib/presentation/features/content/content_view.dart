@@ -28,7 +28,7 @@ class ContentView extends StatelessWidget {
           SizedBox(height: 12),
           Expanded(
             child: ListView.separated(
-              itemCount: model.items.length,
+              itemCount: model.items.length + 1,
               padding: EdgeInsets.symmetric(
                 horizontal: 24,
                 vertical: 12,
@@ -49,12 +49,7 @@ class ContentView extends StatelessWidget {
                   return GoodCard(item);
                 }
                 if (item is QuizModel) {
-                  return Container(
-                    width: double.infinity,
-                    height: 100,
-                    color: AppColor.blue,
-                    child: Text(item.title),
-                  );
+                  return Container();
                 }
                 return Container();
               },
