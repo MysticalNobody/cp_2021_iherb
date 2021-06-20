@@ -20,7 +20,29 @@ class DrugsView extends StatelessWidget {
           children: [
             CustomScrollView(
               slivers: [
-                Topbar(title: 'ВАШИ ПРЕПАРАТЫ', bg: AppColor.bg),
+                Topbar(
+                  title: 'ВАШИ ПРЕПАРАТЫ',
+                  bg: AppColor.bg,
+                  action: Container(
+                    width: 36,
+                    height: 36,
+                    margin: EdgeInsets.only(
+                      left: 16,
+                      right: 16,
+                      top: 10,
+                    ),
+                    child: CupertinoButton(
+                      minSize: 0,
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      child: Icon(
+                        Icons.add,
+                        size: 34,
+                        color: AppColor.primary.withOpacity(.3),
+                      ),
+                    ),
+                  ),
+                ),
                 SliverPadding(
                   padding: EdgeInsets.only(left: 25, right: 25, bottom: 34),
                   sliver: SliverList(
