@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iherb/presentation/features/content/content_view.dart';
+import 'package:iherb/presentation/features/drugs/drugs_view.dart';
 import 'package:iherb/presentation/features/profile/profile_view.dart';
 import 'package:iherb/presentation/features/schedule/schedule_view.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
@@ -32,7 +33,9 @@ class HomeView extends StatelessWidget {
               (index) => BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   model.bottomIcons[index],
-                  color: model.page == index ? AppColor.primary : AppColor.unselectedBottomTabColor,
+                  color: model.page == index
+                      ? AppColor.primary
+                      : AppColor.unselectedBottomTabColor,
                 ),
                 // ignore: deprecated_member_use
                 title: Padding(
@@ -43,7 +46,9 @@ class HomeView extends StatelessWidget {
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: model.page == index ? AppColor.primary : AppColor.white,
+                        color: model.page == index
+                            ? AppColor.primary
+                            : AppColor.white,
                       ),
                     ),
                   ),
@@ -57,6 +62,7 @@ class HomeView extends StatelessWidget {
             children: [
               ContentView(),
               ScheduleView(),
+              DrugsView(),
               ProfileView(),
             ],
           ),

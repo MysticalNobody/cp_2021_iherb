@@ -11,11 +11,13 @@ class Topbar extends StatelessWidget {
     required this.bg,
     this.implyLeading = true,
     this.leadingRight = false,
+    this.action,
   }) : super(key: key);
   final String title;
   final Function? onPop;
   final bool implyLeading;
   final bool leadingRight;
+  final Widget? action;
   final Color bg;
 
   @override
@@ -110,6 +112,16 @@ class Topbar extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (action != null)
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        top: paddingValue / 1.6,
+                      ),
+                      child: action,
+                    ),
+                  )
               ],
             ),
           );
