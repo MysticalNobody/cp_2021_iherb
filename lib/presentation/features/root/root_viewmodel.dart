@@ -13,7 +13,6 @@ class RootViewModel extends BaseViewModel {
 
   call() {
     if (service.user.value != null) {
-      // App.router.replace(MascotViewRoute());
       _log.v("Navigation to HomeViewRoute");
       App.router.replace(HomeViewRoute());
     } else {
