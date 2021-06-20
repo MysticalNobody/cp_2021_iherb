@@ -25,8 +25,7 @@ class ProfileView extends StatelessWidget {
               bg: AppColor.bg,
             ),
             SliverPadding(
-              padding:
-                  EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
+              padding: EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
               sliver: SliverToBoxAdapter(
                 child: CupertinoButton(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
@@ -210,6 +209,32 @@ class ProfileView extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    CupertinoButton(
+                      onPressed: () => App.router.push(MascotViewRoute()),
+                      minSize: 0,
+                      padding: EdgeInsets.zero,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: AppColor.primary,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 28),
+                          child: Center(
+                            child: Text(
+                              'ТЫК',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: AppColor.white,
+                                fontFamily: "Arial",
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
