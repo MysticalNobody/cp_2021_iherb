@@ -10,7 +10,7 @@ part 'auth_api.g.dart';
 abstract class AuthApi {
   factory AuthApi(Dio dio, {String baseUrl}) = _AuthApi;
 
-  @PUT('users/register')
+  @POST('users/register')
   Future<TokenResponse> register(
     @Body() UserModel userModel,
   );

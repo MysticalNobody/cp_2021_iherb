@@ -20,7 +20,7 @@ class SexBottomSheetPicker extends StatelessWidget {
           const SizedBox(height: 20),
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () => Navigator.of(context).pop(0),
+            onTap: () => Navigator.of(context).pop('Мужской'),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
               child: Text(
@@ -32,7 +32,7 @@ class SexBottomSheetPicker extends StatelessWidget {
           const SizedBox(height: 10),
           GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () => Navigator.of(context).pop(1),
+            onTap: () => Navigator.of(context).pop('Женский'),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
               child: Text(

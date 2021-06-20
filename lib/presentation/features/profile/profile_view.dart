@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iherb/app/app.dart';
+import 'package:iherb/domain/services/auth_service.dart';
 import 'package:iherb/presentation/navigation/app_route.gr.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
 import 'package:iherb/presentation/widgets/appbar.dart';
 import 'package:iherb/presentation/widgets/reactive_scaffold.dart';
+import 'package:provider/provider.dart';
 
 import 'profile_viewmodel.dart';
 
@@ -14,7 +16,7 @@ class ProfileView extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(color: AppColor.bg),
       child: ReactiveScaffold<ProfileViewModel>(
-        viewModelBuilder: () => ProfileViewModel(),
+        viewModelBuilder: () => ProfileViewModel(context.read<AuthService>()),
         body: (context, viewModel, _) => CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
@@ -23,7 +25,8 @@ class ProfileView extends StatelessWidget {
               bg: AppColor.bg,
             ),
             SliverPadding(
-              padding: EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
+              padding:
+                  EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
               sliver: SliverToBoxAdapter(
                 child: CupertinoButton(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),

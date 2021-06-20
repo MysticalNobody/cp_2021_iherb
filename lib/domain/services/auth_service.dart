@@ -3,9 +3,10 @@ import 'package:iherb/data/models/user_model.dart';
 import 'package:stacked/stacked.dart';
 import 'package:iherb/domain/repository/auth/auth_repository.dart';
 
-class AuthService {
+class AuthService with ReactiveServiceMixin {
   AuthService({required this.authRepository}) {
     init();
+    listenToReactiveValues([user]);
   }
 
   final AuthRepository authRepository;

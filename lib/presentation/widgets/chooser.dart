@@ -7,14 +7,14 @@ import 'package:iherb/presentation/features/pickers/sex/sex_android.dart';
 import 'package:iherb/presentation/features/pickers/sex/sex_ios.dart';
 
 abstract class AppChooser {
-  static Future<int?> sex(BuildContext context) async {
+  static Future<String?> sex(BuildContext context) async {
     if (Platform.isIOS)
-      return showCupertinoModalPopup<int?>(
+      return showCupertinoModalPopup<String?>(
         context: context,
         builder: (context) => const SexCupertinoActionSheet(),
       );
     else
-      return showModalBottomSheet<int?>(
+      return showModalBottomSheet<String?>(
         context: context,
         builder: (context) => const SexBottomSheetPicker(),
       );

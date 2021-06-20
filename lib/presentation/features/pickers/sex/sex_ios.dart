@@ -6,7 +6,7 @@ class SexCupertinoActionSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sexes = [0, 1];
+    final sexes = ['Мужской', 'Женский'];
     return CupertinoActionSheet(
       title: const Text(
         'Пол',
@@ -16,7 +16,7 @@ class SexCupertinoActionSheet extends StatelessWidget {
         (index) => CupertinoActionSheetAction(
           onPressed: () => Navigator.of(context).pop(sexes[index]),
           child: Text(
-            sexes[index] == 0 ? 'Мужской' : 'Женский',
+            sexes[index],
           ),
         ),
       ),

@@ -37,6 +37,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
 
   @override
   Future<void> saveUser(UserModel user) async {
+    await clear();
     box.put(key, user);
   }
 }
