@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iherb/app/app.dart';
 import 'package:iherb/data/models/article_model.dart';
+import 'package:iherb/presentation/navigation/app_route.gr.dart';
 import 'package:iherb/presentation/widgets/paralax_image.dart';
 
 class ArticleCard extends StatelessWidget {
@@ -15,7 +18,12 @@ class ArticleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(26),
-      child: SizedBox(
+      child: CupertinoButton(
+        padding: EdgeInsets.zero,
+        minSize: 0,
+        onPressed: () {
+          App.router.push(ArticleViewRoute(model: article));
+        },
         child: Stack(
           children: [
             _buildParallaxBackground(context, _backgroundImageKey),

@@ -5,8 +5,10 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:flutter/material.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 
+import '../../data/models/article_model.dart' as _i10;
+import '../features/article/article_view.dart' as _i8;
 import '../features/home/home_view.dart' as _i4;
 import '../features/main_data_profile/main_data_profile_view.dart' as _i5;
 import '../features/mascot/mascot_view.dart' as _i7;
@@ -43,6 +45,12 @@ class AppRoutes extends _i1.RootStackRouter {
           entry: entry,
           child: _i7.MascotView(key: args.key),
           fullscreenDialog: true);
+    },
+    ArticleViewRoute.name: (entry) {
+      var args = entry.routeData.argsAs<ArticleViewRouteArgs>();
+      return _i1.AdaptivePage(
+          entry: entry,
+          child: _i8.ArticleView(key: args.key, model: args.model));
     }
   };
 
@@ -55,7 +63,8 @@ class AppRoutes extends _i1.RootStackRouter {
             path: '/main-data-profile-view'),
         _i1.RouteConfig(QuestionnaireViewRoute.name,
             path: '/questionnaire-view'),
-        _i1.RouteConfig(MascotViewRoute.name, path: '/mascot-view')
+        _i1.RouteConfig(MascotViewRoute.name, path: '/mascot-view'),
+        _i1.RouteConfig(ArticleViewRoute.name, path: '/article-view')
       ];
 }
 
@@ -91,7 +100,7 @@ class QuestionnaireViewRoute extends _i1.PageRouteInfo {
 }
 
 class MascotViewRoute extends _i1.PageRouteInfo<MascotViewRouteArgs> {
-  MascotViewRoute({_i8.Key? key})
+  MascotViewRoute({_i9.Key? key})
       : super(name, path: '/mascot-view', args: MascotViewRouteArgs(key: key));
 
   static const String name = 'MascotViewRoute';
@@ -100,5 +109,22 @@ class MascotViewRoute extends _i1.PageRouteInfo<MascotViewRouteArgs> {
 class MascotViewRouteArgs {
   const MascotViewRouteArgs({this.key});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
+}
+
+class ArticleViewRoute extends _i1.PageRouteInfo<ArticleViewRouteArgs> {
+  ArticleViewRoute({_i9.Key? key, required _i10.ArticleModel model})
+      : super(name,
+            path: '/article-view',
+            args: ArticleViewRouteArgs(key: key, model: model));
+
+  static const String name = 'ArticleViewRoute';
+}
+
+class ArticleViewRouteArgs {
+  const ArticleViewRouteArgs({this.key, required this.model});
+
+  final _i9.Key? key;
+
+  final _i10.ArticleModel model;
 }
