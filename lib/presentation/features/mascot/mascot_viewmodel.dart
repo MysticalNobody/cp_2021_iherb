@@ -34,6 +34,8 @@ class MascotViewModel extends BaseViewModel {
 
   MascotStep step = MascotStep.halfSmile;
 
+  Offset? dragPos;
+
   String get smileAsset => [
         AppImages.imagesHalfSmile,
         AppImages.imagesFullSmile,
@@ -109,6 +111,11 @@ class MascotViewModel extends BaseViewModel {
     });
     starController.stop();
     sadController.forward();
+  }
+
+  void onDrag(DragUpdateDetails details) {
+    dragPos = details.globalPosition;
+    notifyListeners();
   }
 
   call() async {}
