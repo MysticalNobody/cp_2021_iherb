@@ -16,14 +16,14 @@ class ProfileView extends StatelessWidget {
       child: ReactiveScaffold<ProfileViewModel>(
         viewModelBuilder: () => ProfileViewModel(),
         body: (context, viewModel, _) => CustomScrollView(
+          physics: BouncingScrollPhysics(),
           slivers: [
             Topbar(
               title: 'ВАШ ПРОФИЛЬ',
               bg: AppColor.bg,
             ),
             SliverPadding(
-              padding:
-                  EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
+              padding: EdgeInsets.only(left: 25, right: 25, top: 24, bottom: 34),
               sliver: SliverToBoxAdapter(
                 child: CupertinoButton(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
@@ -134,9 +134,13 @@ class ProfileView extends StatelessWidget {
               sliver: SliverList(
                 delegate: SliverChildListDelegate(
                   [
-                    Text('УПОТРЕБЛЯЕМЫЕ ЛЕКАРСТВА',
-                        style: TextStyle(
-                            fontSize: 14, color: Colors.black.withOpacity(.3))),
+                    Text(
+                      'УПОТРЕБЛЯЕМЫЕ ЛЕКАРСТВА',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black.withOpacity(.3),
+                      ),
+                    ),
                     SizedBox(height: 13),
                     CupertinoButton(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -145,6 +149,19 @@ class ProfileView extends StatelessWidget {
                       onPressed: () {},
                       child: SizedBox(
                         height: 60,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Витамин D, 5 мг',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontFamily: "Arial",
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 8),
@@ -155,6 +172,19 @@ class ProfileView extends StatelessWidget {
                       onPressed: () {},
                       child: SizedBox(
                         height: 60,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Витамин C, 10 мг',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontFamily: "Arial",
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 8),
@@ -165,16 +195,19 @@ class ProfileView extends StatelessWidget {
                       onPressed: () {},
                       child: SizedBox(
                         height: 60,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    CupertinoButton(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      color: Colors.white,
-                      minSize: 0,
-                      onPressed: () {},
-                      child: SizedBox(
-                        height: 60,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Витамин B, 2 мг',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontFamily: "Arial",
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

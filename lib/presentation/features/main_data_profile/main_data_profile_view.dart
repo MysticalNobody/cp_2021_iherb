@@ -17,6 +17,7 @@ class MainDataProfileView extends StatelessWidget {
         viewModelBuilder: () => MainDataProfileViewModel(),
         body: (context, viewModel, __) {
           return CustomScrollView(
+            physics: BouncingScrollPhysics(),
             slivers: [
               Topbar(
                 title: 'ОСНОВНЫЕ ДАННЫЕ',
@@ -24,8 +25,7 @@ class MainDataProfileView extends StatelessWidget {
                 onPop: () => App.router.pop(),
               ),
               SliverPadding(
-                padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 34, top: 24),
+                padding: EdgeInsets.only(left: 25, right: 25, bottom: 34, top: 24),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate(
                     [

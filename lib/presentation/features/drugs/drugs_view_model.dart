@@ -7,14 +7,14 @@ class DrugsViewModel extends BaseViewModel {
       count: 1,
       date: '09:00',
       mg: 5,
-      when: 'Во время еды',
+      when: 'После еды',
       type: DrugType.d,
     ),
     DrugModel(
       count: 1,
       date: '09:00',
       mg: 5,
-      when: 'Во время еды',
+      when: 'До еды',
       type: DrugType.b,
     ),
     DrugModel(
@@ -23,13 +23,6 @@ class DrugsViewModel extends BaseViewModel {
       mg: 5,
       when: 'Во время еды',
       type: DrugType.c,
-    ),
-    DrugModel(
-      count: 1,
-      date: '09:00',
-      mg: 5,
-      when: 'Во время еды',
-      type: DrugType.b,
     ),
   ];
 }
