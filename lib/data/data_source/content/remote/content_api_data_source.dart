@@ -1,6 +1,5 @@
-import 'package:iherb/data/data_source/auth/remote/auth_api.dart';
 import 'package:iherb/data/models/article_model.dart';
-import 'package:iherb/data/models/good_model.dart';
+import 'package:iherb/data/models/product_model.dart';
 import 'package:iherb/data/models/quiz_model.dart';
 
 import '../../interfaces/data_source.dart';
@@ -13,6 +12,6 @@ abstract class ContentApiDataSource implements AppDataSource {
   final ContentApi api;
 
   Future<List<ArticleModel>> getArticles();
-  Future<List<GoodModel>> getGoods();
+  Future<List<ProductModel>> getGoods();
   Future<List<QuizModel>> getQuizes();
 }

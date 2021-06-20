@@ -5,6 +5,7 @@ import 'package:iherb/data/data_source/content/local/content_local_data_source.d
 import 'package:iherb/data/data_source/content/remote/content_api_data_source.dart';
 import 'package:iherb/data/models/article_model.dart';
 import 'package:iherb/data/models/good_model.dart';
+import 'package:iherb/data/models/product_model.dart';
 import 'package:iherb/data/models/quiz_model.dart';
 import 'package:iherb/domain/repository/auth/auth_repository.dart';
 
@@ -23,12 +24,12 @@ class ContentRepositoryImpl implements ContentRepository {
 
   @override
   Future<List<ArticleModel>> getArticles() {
-    return localDataSource.getArticles();
+    return remoteDataSource.getArticles();
   }
 
   @override
-  Future<List<GoodModel>> getGoods() {
-    return localDataSource.getGoods();
+  Future<List<ProductModel>> getGoods() {
+    return remoteDataSource.getGoods();
   }
 
   @override

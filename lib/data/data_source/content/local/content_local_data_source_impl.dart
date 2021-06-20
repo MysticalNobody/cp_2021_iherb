@@ -28,7 +28,7 @@ class ContentLocalDataSourceImpl implements ContentLocalDataSource {
     return [
       GoodModel(
         photo: 'https://s3.images-iherb.com/now/now00367/w/10.jpg',
-        price: 218.46,
+        price: '218.46',
         title: 'Now Foods, высокоактивный витамин D-3',
       ),
     ];

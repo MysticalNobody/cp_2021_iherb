@@ -8,14 +8,14 @@ part of 'good_model.dart';
 
 GoodModel _$GoodModelFromJson(Map<String, dynamic> json) {
   return GoodModel(
-    title: json['title'] as String,
-    price: (json['price'] as num).toDouble(),
-    photo: json['photo'] as String,
+    title: json['Name'] as String,
+    price: json['ListPrice'] as String,
+    photo: json['ProductImage'] as String,
   );
 }
 
 Map<String, dynamic> _$GoodModelToJson(GoodModel instance) => <String, dynamic>{
-      'title': instance.title,
-      'price': instance.price,
-      'photo': instance.photo,
+      'Name': instance.title,
+      'ListPrice': instance.price,
+      'ProductImage': instance.photo,
     };
