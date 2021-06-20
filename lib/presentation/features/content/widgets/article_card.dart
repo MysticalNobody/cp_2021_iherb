@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iherb/app/app.dart';
 import 'package:iherb/data/models/article_model.dart';
 import 'package:iherb/presentation/navigation/app_route.gr.dart';
+import 'package:iherb/presentation/theme/app_colors.dart';
 import 'package:iherb/presentation/widgets/paralax_image.dart';
 
 class ArticleCard extends StatelessWidget {
@@ -87,6 +88,12 @@ class ArticleCard extends StatelessWidget {
       return Image.network(
         article.photo,
         key: key,
+        errorBuilder: (_, __, ___) {
+          return Image.network(
+            'https://www.vigornsage.com/wp-content/uploads/woocommerce-placeholder.png',
+            fit: BoxFit.contain,
+          );
+        },
         fit: BoxFit.contain,
       );
     }
@@ -102,6 +109,12 @@ class ArticleCard extends StatelessWidget {
           Image.network(
             article.photo,
             key: key,
+            errorBuilder: (_, __, ___) {
+              return Image.network(
+                'https://www.vigornsage.com/wp-content/uploads/woocommerce-placeholder.png',
+                fit: BoxFit.contain,
+              );
+            },
             fit: BoxFit.contain,
           ),
         ],
