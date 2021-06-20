@@ -13,6 +13,7 @@ class SplashViewModel extends BaseViewModel {
 
   Future<void> runStartupLogic() async {
     _log.v('Running startup logic ...');
+    await authService.inited.future;
     App.router.replace(RootViewRoute());
   }
 }
