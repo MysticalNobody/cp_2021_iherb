@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:iherb/core/utils/utils.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
+import 'package:iherb/presentation/widgets/paralax_image.dart';
 
 class VitaminCard extends StatefulWidget {
-  const VitaminCard({
+  VitaminCard({
     Key? key,
     required this.vitaminAsset,
     required this.count,
@@ -20,6 +21,8 @@ class VitaminCard extends StatefulWidget {
   final String name;
   final TimeOfDay time;
   final List<Color> colors;
+
+  final GlobalKey _backgroundImageKey = GlobalKey();
 
   @override
   _VitaminCardState createState() => _VitaminCardState();
@@ -86,7 +89,10 @@ class _VitaminCardState extends State<VitaminCard> {
           ),
         if (slideActionType == SlideActionType.secondary)
           Positioned(
-            right: -23 + (cardRotateDeg > 0.03 ? 0 : (50 - cardRotateDeg * 5000).clamp(0, 50)),
+            right: -23 +
+                (cardRotateDeg > 0.03
+                    ? 0
+                    : (50 - cardRotateDeg * 5000).clamp(0, 50)),
             top: 110,
             child: RotationTransition(
               turns: AlwaysStoppedAnimation(19.16 / 360),
@@ -118,7 +124,9 @@ class _VitaminCardState extends State<VitaminCard> {
           controller: controller,
           actionExtentRatio: 0.5,
           child: RotationTransition(
-            turns: AlwaysStoppedAnimation((slideActionType == SlideActionType.primary ? 1 : -1) * cardRotateDeg),
+            turns: AlwaysStoppedAnimation(
+                (slideActionType == SlideActionType.primary ? 1 : -1) *
+                    cardRotateDeg),
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 24),
               width: MediaQuery.of(context).size.width,
@@ -181,11 +189,7 @@ class _VitaminCardState extends State<VitaminCard> {
                       ],
                     ),
                   ),
-                  Image.asset(
-                    widget.vitaminAsset,
-                    width: MediaQuery.of(context).size.width - 44,
-                    fit: BoxFit.fitWidth,
-                  ),
+                  _buildParallaxBackground(context, widget._backgroundImageKey),
                 ],
               ),
             ),
@@ -194,6 +198,26 @@ class _VitaminCardState extends State<VitaminCard> {
           secondaryActions: <Widget>[Container()],
         ),
       ],
+    );
+  }
+
+  Widget _buildParallaxBackground(BuildContext context, GlobalKey key) {
+    return AspectRatio(
+      aspectRatio: 14 / 8,
+      child: Flow(
+        delegate: ParallaxFlowDelegate(
+          scrollable: Scrollable.of(context)!,
+          listItemContext: context,
+          backgroundImageKey: key,
+        ),
+        children: [
+          Image.asset(
+            widget.vitaminAsset,
+            key: key,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
     );
   }
 }
