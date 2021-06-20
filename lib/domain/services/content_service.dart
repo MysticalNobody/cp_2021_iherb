@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:iherb/data/models/article_model.dart';
-import 'package:iherb/data/models/good_model.dart';
+import 'package:iherb/data/models/product_model.dart';
 import 'package:iherb/data/models/quiz_model.dart';
 import 'package:iherb/domain/repository/content/content_repository.dart';
 
@@ -14,7 +14,7 @@ class ContentService {
   Completer inited = Completer();
 
   List<ArticleModel> articles = [];
-  List<GoodModel> goods = [];
+  List<ProductModel> products = [];
   List<QuizModel> quizes = [];
 
   Future<void> init() async {
@@ -31,7 +31,7 @@ class ContentService {
   }
 
   Future<void> fetchGoods() async {
-    goods = await contentRepository.getGoods();
+    products = await contentRepository.getGoods();
   }
 
   Future<void> fetchQuizes() async {

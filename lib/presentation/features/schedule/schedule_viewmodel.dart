@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:iherb/presentation/theme/icons_and_images.dart';
 import 'package:stacked/stacked.dart';
 import 'package:iherb/core/utils/utils.dart';

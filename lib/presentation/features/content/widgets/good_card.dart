@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iherb/core/utils/utils.dart';
 import 'package:iherb/data/models/good_model.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
 
@@ -8,7 +7,7 @@ class GoodCard extends StatelessWidget {
 
   final GoodModel good;
 
-  String get price => '${Utils.numToFixStr(good.price)} ₽';
+  String get price => good.price;
 
   @override
   Widget build(BuildContext context) {

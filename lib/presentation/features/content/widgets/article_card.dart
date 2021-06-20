@@ -26,7 +26,7 @@ class ArticleCard extends StatelessWidget {
                   end: Alignment.bottomCenter,
                   colors: [
                     Colors.transparent,
-                    Colors.black,
+                    Colors.black.withOpacity(0.7),
                   ],
                 ),
               ),
@@ -87,7 +87,7 @@ class ArticleCard extends StatelessWidget {
           Image.network(
             article.photo,
             key: key,
-            fit: BoxFit.fitWidth,
+            fit: BoxFit.contain,
           ),
         ],
       ),

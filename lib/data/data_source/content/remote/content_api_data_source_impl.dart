@@ -1,5 +1,6 @@
 import 'package:iherb/data/models/article_model.dart';
 import 'package:iherb/data/models/good_model.dart';
+import 'package:iherb/data/models/product_model.dart';
 import 'package:iherb/data/models/quiz_model.dart';
 
 import 'content_api.dart';
@@ -10,13 +11,15 @@ class ContentApiDataSourceImpl implements ContentApiDataSource {
   final ContentApi api;
 
   @override
-  Future<List<ArticleModel>> getArticles() {
-    return api.getArticles();
+  Future<List<ArticleModel>> getArticles() async {
+    final res = await api.getArticles();
+    return res.feed;
   }
 
   @override
-  Future<List<GoodModel>> getGoods() {
-    return api.getGoods();
+  Future<List<ProductModel>> getGoods() async {
+    final res = await api.getGoods();
+    return res.result;
   }
 
   @override

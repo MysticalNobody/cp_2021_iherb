@@ -8,17 +8,17 @@ part of 'article_model.dart';
 
 ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
   return ArticleModel(
-    title: json['title'] as String,
+    title: json['name'] as String,
     tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-    photo: json['photo'] as String,
+    photo: convertImageFromJson(json['image'] as String),
     text: json['text'] as String,
   );
 }
 
 Map<String, dynamic> _$ArticleModelToJson(ArticleModel instance) =>
     <String, dynamic>{
-      'title': instance.title,
+      'name': instance.title,
       'tags': instance.tags,
-      'photo': instance.photo,
+      'image': convertImageToJson(instance.photo),
       'text': instance.text,
     };

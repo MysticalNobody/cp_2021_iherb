@@ -55,7 +55,7 @@ class ContentViewModel extends BaseViewModel {
     _items
       ..clear()
       ..addAll(contentService.articles)
-      ..addAll(contentService.goods)
+      ..addAll(contentService.products.map<GoodModel>((e) => e.good))
       ..addAll(contentService.quizes)
       ..shuffle();
     notifyListeners();
