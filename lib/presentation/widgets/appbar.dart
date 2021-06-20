@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
@@ -101,10 +102,10 @@ class Topbar extends StatelessWidget {
                     child: Container(
                       alignment: titleAlignment,
                       width: constraints.maxWidth / scaleValue,
-                      child: Text(
+                      child: AutoSizeText(
                         title,
+                        maxLines: 1,
                         style: TextStyle(
-                          fontSize: 12,
                           fontFamily: 'Arial',
                           fontWeight: FontWeight.bold,
                         ).copyWith(fontSize: textSizeValue),

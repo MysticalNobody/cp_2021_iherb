@@ -8,6 +8,7 @@ import 'package:auto_route/auto_route.dart' as _i1;
 
 import '../features/home/home_view.dart' as _i4;
 import '../features/main_data_profile/main_data_profile_view.dart' as _i5;
+import '../features/questionnaire/questionnaire_view.dart' as _i6;
 import '../features/root/root_view.dart' as _i3;
 import '../features/splash/splash_view.dart' as _i2;
 
@@ -29,6 +30,9 @@ class AppRoutes extends _i1.RootStackRouter {
     MainDataProfileViewRoute.name: (entry) {
       return _i1.AdaptivePage(
           entry: entry, child: const _i5.MainDataProfileView());
+    },
+    QuestionnaireViewRoute.name: (entry) {
+      return _i1.AdaptivePage(entry: entry, child: _i6.QuestionnaireView());
     }
   };
 
@@ -38,7 +42,9 @@ class AppRoutes extends _i1.RootStackRouter {
         _i1.RouteConfig(RootViewRoute.name, path: '/root-view'),
         _i1.RouteConfig(HomeViewRoute.name, path: '/home-view'),
         _i1.RouteConfig(MainDataProfileViewRoute.name,
-            path: '/main-data-profile-view')
+            path: '/main-data-profile-view'),
+        _i1.RouteConfig(QuestionnaireViewRoute.name,
+            path: '/questionnaire-view')
       ];
 }
 
@@ -65,4 +71,10 @@ class MainDataProfileViewRoute extends _i1.PageRouteInfo {
       : super(name, path: '/main-data-profile-view');
 
   static const String name = 'MainDataProfileViewRoute';
+}
+
+class QuestionnaireViewRoute extends _i1.PageRouteInfo {
+  const QuestionnaireViewRoute() : super(name, path: '/questionnaire-view');
+
+  static const String name = 'QuestionnaireViewRoute';
 }

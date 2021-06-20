@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iherb/domain/services/tab_service.dart';
 import 'package:iherb/presentation/features/content/content_view.dart';
@@ -38,7 +39,9 @@ class HomeView extends StatelessWidget {
                   (index) => BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       model.bottomIcons[index],
-                      color: page == index ? AppColor.primary : AppColor.unselectedBottomTabColor,
+                      color: page == index
+                          ? AppColor.primary
+                          : AppColor.unselectedBottomTabColor,
                     ),
                     // ignore: deprecated_member_use
                     title: Padding(
@@ -49,7 +52,9 @@ class HomeView extends StatelessWidget {
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: page == index ? AppColor.primary : AppColor.white,
+                            color: page == index
+                                ? AppColor.primary
+                                : AppColor.white,
                           ),
                         ),
                       ),

@@ -12,9 +12,11 @@ class RootViewModel extends BaseViewModel {
   final _log = getLogger('RootViewModel');
 
   call() {
-    if (true) {
+    if (service.token.value != null) {
       _log.v("Navigation to HomeViewRoute");
       App.router.replace(HomeViewRoute());
+    } else {
+      App.router.replace(QuestionnaireViewRoute());
     }
   }
 }

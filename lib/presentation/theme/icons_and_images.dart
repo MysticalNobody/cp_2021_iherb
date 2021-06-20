@@ -26,5 +26,14 @@ class AppImages{
   static const imagesAnal = "assets/images/anal.png";
 static const imagesBpill = "assets/images/bpill.png";
 static const imagesCpill = "assets/images/cpill.png";
-static const imagesDpill = "assets/images/dpill.png";  
+static const imagesDpill = "assets/images/dpill.png";
+static const imagesMascot = "assets/images/mascot.png";
+static const imagesMascot1 = "assets/images/mascot1.png";
+static const imagesMascot2 = "assets/images/mascot2.png";
+static const imagesMascot3 = "assets/images/mascot3.png";
+static const imagesMascot4 = "assets/images/mascot4.png";
+static const imagesMascot5 = "assets/images/mascot5.png";
+static const imagesMascot6 = "assets/images/mascot6.png";
+static const imagesMascot7 = "assets/images/mascot7.png";
+static const imagesMascotSad = "assets/images/mascot_sad.png";  
 }
