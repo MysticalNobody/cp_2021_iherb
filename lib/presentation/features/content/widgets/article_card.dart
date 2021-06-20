@@ -75,6 +75,13 @@ class ArticleCard extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context, GlobalKey key) {
+    if (Scrollable.of(context) == null) {
+      return Image.network(
+        article.photo,
+        key: key,
+        fit: BoxFit.contain,
+      );
+    }
     return AspectRatio(
       aspectRatio: 14 / 9,
       child: Flow(

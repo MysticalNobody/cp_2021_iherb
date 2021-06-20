@@ -72,7 +72,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/fonts/
-    - assets/flare/
+    # - assets/flare/
 
   fonts:
     - family: Arial

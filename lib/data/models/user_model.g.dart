@@ -17,7 +17,7 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserModel(
-      id: fields[0] as String,
+      id: fields[0] as String?,
       feel: fields[1] as String?,
       lifestyle: fields[2] as String?,
       diet: fields[3] as String?,
@@ -76,7 +76,7 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
 
 UserModel _$UserModelFromJson(Map<String, dynamic> json) {
   return UserModel(
-    id: json['id'] as String,
+    id: json['id'] as String?,
     feel: json['feel'] as String?,
     lifestyle: json['lifestyle'] as String?,
     diet: json['diet'] as String?,

@@ -8,6 +8,7 @@ import 'package:auto_route/auto_route.dart' as _i1;
 
 import '../features/home/home_view.dart' as _i4;
 import '../features/main_data_profile/main_data_profile_view.dart' as _i5;
+import '../features/mascot/mascot_view.dart' as _i7;
 import '../features/questionnaire/questionnaire_view.dart' as _i6;
 import '../features/root/root_view.dart' as _i3;
 import '../features/splash/splash_view.dart' as _i2;
@@ -33,6 +34,10 @@ class AppRoutes extends _i1.RootStackRouter {
     },
     QuestionnaireViewRoute.name: (entry) {
       return _i1.AdaptivePage(entry: entry, child: _i6.QuestionnaireView());
+    },
+    MascotViewRoute.name: (entry) {
+      return _i1.AdaptivePage(
+          entry: entry, child: _i7.MascotView(), fullscreenDialog: true);
     }
   };
 
@@ -44,7 +49,8 @@ class AppRoutes extends _i1.RootStackRouter {
         _i1.RouteConfig(MainDataProfileViewRoute.name,
             path: '/main-data-profile-view'),
         _i1.RouteConfig(QuestionnaireViewRoute.name,
-            path: '/questionnaire-view')
+            path: '/questionnaire-view'),
+        _i1.RouteConfig(MascotViewRoute.name, path: '/mascot-view')
       ];
 }
 
@@ -77,4 +83,10 @@ class QuestionnaireViewRoute extends _i1.PageRouteInfo {
   const QuestionnaireViewRoute() : super(name, path: '/questionnaire-view');
 
   static const String name = 'QuestionnaireViewRoute';
+}
+
+class MascotViewRoute extends _i1.PageRouteInfo {
+  const MascotViewRoute() : super(name, path: '/mascot-view');
+
+  static const String name = 'MascotViewRoute';
 }
