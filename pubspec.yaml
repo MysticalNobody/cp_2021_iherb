@@ -29,6 +29,9 @@ dependencies:
   retrofit: 2.0.0-beta1
 
   # Widgets
+  rive:
+  flutter_platform_widgets: ^1.9.5
+  auto_size_text: 3.0.0-nullsafety.0
   flutter_svg:
   flutter_slidable: ^0.6.0
 
@@ -69,6 +72,8 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/fonts/
+    - assets/flare/
+
   fonts:
     - family: Arial
       fonts:

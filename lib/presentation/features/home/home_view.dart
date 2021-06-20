@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iherb/presentation/features/content/content_view.dart';
 import 'package:iherb/presentation/features/drugs/drugs_view.dart';
@@ -21,13 +22,14 @@ class HomeView extends StatelessWidget {
       ),
       builder: (context, model, child) {
         return Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
+          bottomNavigationBar: PlatformNavBar(
             backgroundColor: AppColor.white,
-            elevation: 0,
-            enableFeedback: true,
+            cupertino: (_, __) => CupertinoTabBarData(
+              backgroundColor: AppColor.white,
+              border: Border.fromBorderSide(BorderSide.none),
+            ),
             currentIndex: model.page,
-            type: BottomNavigationBarType.fixed,
-            onTap: model.setPage,
+            itemChanged: model.setPage,
             items: List.generate(
               model.bottomIcons.length,
               (index) => BottomNavigationBarItem(
