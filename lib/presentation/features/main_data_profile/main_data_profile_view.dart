@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iherb/app/app.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
 import 'package:iherb/presentation/widgets/appbar.dart';
+import 'package:iherb/presentation/widgets/chooser.dart';
 import 'package:iherb/presentation/widgets/reactive_scaffold.dart';
 
 import 'main_data_profile_view_model.dart';
@@ -32,7 +33,9 @@ class MainDataProfileView extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         color: Colors.white,
                         minSize: 0,
-                        onPressed: () {},
+                        onPressed: () {
+                          AppChooser.sex(context);
+                        },
                         child: SizedBox(
                           height: 60,
                           child: Row(
@@ -63,7 +66,9 @@ class MainDataProfileView extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         color: Colors.white,
                         minSize: 0,
-                        onPressed: () {},
+                        onPressed: () {
+                          AppChooser.dateOfBirth(context);
+                        },
                         child: SizedBox(
                           height: 60,
                           child: Row(
