@@ -7,7 +7,7 @@ part 'user_model.g.dart';
 @JsonSerializable(explicitToJson: true)
 class UserModel {
   @HiveField(0)
-  final String id;
+  String? id;
   @HiveField(1)
   String? feel;
   @HiveField(2)
@@ -30,7 +30,7 @@ class UserModel {
   String? chronic;
 
   UserModel({
-    required this.id,
+    this.id,
     this.feel,
     this.lifestyle,
     this.diet,
@@ -43,6 +43,7 @@ class UserModel {
     this.chronic,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }
