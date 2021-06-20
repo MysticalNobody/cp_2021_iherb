@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'eye.dart';
 
 class MascotEyes extends StatelessWidget {
-  const MascotEyes({Key? key}) : super(key: key);
+  const MascotEyes({
+    Key? key,
+    required this.dragPos,
+  }) : super(key: key);
+
+  final Offset? dragPos;
 
   @override
   Widget build(BuildContext context) {
