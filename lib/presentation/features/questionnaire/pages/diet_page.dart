@@ -49,7 +49,7 @@ class DietPage extends StatelessWidget {
               children: [
                 SizedBox(height: MediaQuery.of(context).size.height * .1),
                 Image.asset(
-                  AppImages.imagesMascot1,
+                  AppImages.imagesMascot5,
                   height: 106,
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * .05),

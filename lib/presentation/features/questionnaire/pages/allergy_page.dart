@@ -51,7 +51,7 @@ class AllergyPage extends StatelessWidget {
               children: [
                 SizedBox(height: MediaQuery.of(context).size.height * .1),
                 Image.asset(
-                  AppImages.imagesMascot1,
+                  AppImages.imagesMascot6,
                   height: 106,
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * .05),
@@ -97,8 +97,8 @@ class AllergyPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    if(viewModel.user.allergy!=null)
-                    viewModel.user.allergy!.clear();
+                    if (viewModel.user.allergy != null)
+                      viewModel.user.allergy!.clear();
                     viewModel.setPage(viewModel.page += 1);
                   },
                 ),

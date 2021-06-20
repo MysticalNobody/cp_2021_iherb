@@ -23,17 +23,17 @@ class ActivityPage extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.topLeft,
-            child: Container(
-              width: 36,
-              height: 36,
-              margin: EdgeInsets.only(
-                left: 16,
-                top: 10,
-              ),
-              child: CupertinoButton(
-                minSize: 0,
-                padding: EdgeInsets.zero,
-                onPressed: () => viewModel.setPage(viewModel.page - 1),
+            child: CupertinoButton(
+              minSize: 0,
+              padding: EdgeInsets.zero,
+              onPressed: () => viewModel.setPage(4),
+              child: Container(
+                width: 36,
+                height: 36,
+                margin: EdgeInsets.only(
+                  left: 16,
+                  top: 10,
+                ),
                 child: Icon(
                   Icons.arrow_back,
                   size: 34,
@@ -49,7 +49,7 @@ class ActivityPage extends StatelessWidget {
               children: [
                 SizedBox(height: MediaQuery.of(context).size.height * .1),
                 Image.asset(
-                  AppImages.imagesMascot1,
+                  AppImages.imagesMascot4,
                   height: 106,
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * .05),

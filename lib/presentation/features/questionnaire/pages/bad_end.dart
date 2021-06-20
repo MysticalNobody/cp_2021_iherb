@@ -24,7 +24,7 @@ class BadEndPage extends StatelessWidget {
               children: [
                 SizedBox(height: MediaQuery.of(context).size.height * .1),
                 Image.asset(
-                  AppImages.imagesMascot,
+                  AppImages.imagesMascotSad,
                   height: 106,
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * .05),

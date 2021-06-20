@@ -27,7 +27,7 @@ class HWPage extends StatelessWidget {
               child: CupertinoButton(
                 minSize: 0,
                 padding: EdgeInsets.zero,
-                onPressed: () => viewModel.setPage(1),
+                onPressed: () => viewModel.setPage(3),
                 child: Icon(
                   Icons.arrow_back,
                   size: 34,
@@ -44,7 +44,7 @@ class HWPage extends StatelessWidget {
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * .1),
                   Image.asset(
-                    AppImages.imagesMascot1,
+                    AppImages.imagesMascot3,
                     height: 106,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * .05),
