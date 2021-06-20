@@ -28,6 +28,7 @@ class HomeViewModel extends BaseViewModel {
   List<String> get bottomIcons => [
         AppIcons.iconsHome,
         AppIcons.iconsCalendar,
+        AppIcons.iconsDrugs,
         AppIcons.iconsProfile,
       ];
 

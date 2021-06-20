@@ -23,4 +23,32 @@ class Utils {
   static bool isSameDate(DateTime a, DateTime b) {
     return a.day == b.day && a.month == b.month && a.year == b.year;
   }
+
+  static String getWeekdayName(int weekday) {
+    return [
+      'ПН',
+      'ВТ',
+      'СР',
+      'ЧТ',
+      'ПТ',
+      'СБ',
+      'ВС',
+    ][weekday - 1];
+  }
+
+  static String getWeekdayFullName(int weekday) {
+    return [
+      'ПОНЕДЕЛЬНИК',
+      'ВТОРНИК',
+      'СРЕДА',
+      'ЧЕТВЕРГ',
+      'ПЯТНИЦА',
+      'СУББОТА',
+      'ВОСКРЕСЕНЬЕ',
+    ][weekday - 1];
+  }
+
+  static String twoDigits(int value) {
+    return value.toString().length == 1 ? '0$value' : value.toString();
+  }
 }

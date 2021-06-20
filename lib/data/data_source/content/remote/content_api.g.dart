@@ -14,36 +14,32 @@ class _ContentApi implements ContentApi {
   String? baseUrl;
 
   @override
-  Future<List<ArticleModel>> getArticles() async {
+  Future<ArticleResponse> getArticles() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<ArticleModel>>(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ArticleResponse>(
             Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
-                .compose(_dio.options, 'articles',
+                .compose(_dio.options, 'feed',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ArticleResponse.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<List<GoodModel>> getGoods() async {
+  Future<ProductsResponse> getGoods() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<GoodModel>>(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ProductsResponse>(
             Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
-                .compose(_dio.options, 'goods',
+                .compose(_dio.options, 'products',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => GoodModel.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = ProductsResponse.fromJson(_result.data!);
     return value;
   }
 

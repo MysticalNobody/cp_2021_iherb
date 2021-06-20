@@ -1,84 +1,41 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iherb/core/utils/utils.dart';
-import 'package:iherb/presentation/theme/app_colors.dart';
+import 'package:iherb/presentation/features/schedule/widgets/vitamin_card.dart';
 import 'package:iherb/presentation/widgets/reactive_scaffold.dart';
 
 import 'schedule_viewmodel.dart';
+import 'widgets/appbar.dart';
 
 class ScheduleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ReactiveScaffold<ScheduleViewModel>(
       viewModelBuilder: () => ScheduleViewModel(),
-      body: (context, model, _) => Column(
+      body: (context, model, _) => Stack(
         children: [
-          SafeArea(
-            bottom: false,
-            child: SizedBox(),
+          ListView.separated(
+            padding: EdgeInsets.only(bottom: 30, top: 240),
+            itemCount: model.vitamins.length,
+            separatorBuilder: (context, index) => const SizedBox(height: 15),
+            physics: BouncingScrollPhysics(),
+            itemBuilder: (context, index) {
+              final vitamin = model.vitamins[index];
+              return VitaminCard(
+                vitaminAsset: vitamin.asset,
+                count: vitamin.count,
+                when: vitamin.when,
+                name: vitamin.name,
+                time: vitamin.time,
+                colors: vitamin.colors,
+              );
+            },
           ),
-          SizedBox(height: 22),
-          SizedBox(
-            height: 63,
-            child: ListView.separated(
-              itemCount: 1000,
-              reverse: true,
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(width: 12),
-              itemBuilder: (context, index) {
-                DateTime day;
-                if (index < 7) {
-                  day = DateTime.now().add(Duration(days: 7 - index));
-                } else {
-                  day = DateTime.now().subtract(Duration(days: index - 7));
-                }
-                bool selected = Utils.isSameDate(model.selectedDate, day);
-                return CupertinoButton(
-                  onPressed: () => model.selectDate(day),
-                  minSize: 0,
-                  padding: EdgeInsets.zero,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(13),
-                      color: selected ? AppColor.primary : AppColor.bg,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        left: 11,
-                        right: 11,
-                        top: 11,
-                        bottom: 13,
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            day.weekday.toString(),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: selected ? Colors.white : Color(0xFFB6C4D8),
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            day.day.toString(),
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: selected ? AppColor.white : AppColor.primary,
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
+          ScheduleAppBar(
+            selectedDate: model.selectedDate,
+            onChangeDate: model.selectDate,
+            onTabTap: model.selectTab,
+            tabIndex: model.selectedTab,
           ),
-          SizedBox(height: 22),
         ],
       ),
     );

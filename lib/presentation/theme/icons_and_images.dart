@@ -16,11 +16,15 @@
 
 class AppIcons{
   static const iconsCalendar = "assets/icons/calendar.svg";
+static const iconsDrugs = "assets/icons/drugs.svg";
 static const iconsHome = "assets/icons/home.svg";
 static const iconsProfile = "assets/icons/profile.svg";
 static const iconsSearch = "assets/icons/search.svg";
 }
 
 class AppImages{
-  static const imagesAnal = "assets/images/anal.png";  
+  static const imagesAnal = "assets/images/anal.png";
+static const imagesBpill = "assets/images/bpill.png";
+static const imagesCpill = "assets/images/cpill.png";
+static const imagesDpill = "assets/images/dpill.png";  
 }
