@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iherb/data/models/drug_model.dart';
 import 'package:iherb/presentation/features/drugs/drugs_view_model.dart';
 import 'package:iherb/presentation/features/drugs/widgets/drug_card.dart';
 import 'package:iherb/presentation/theme/app_colors.dart';
@@ -19,37 +18,46 @@ class DrugsView extends StatelessWidget {
         return Stack(
           children: [
             CustomScrollView(
+              physics: BouncingScrollPhysics(),
               slivers: [
                 Topbar(
                   title: 'ВАШИ ПРЕПАРАТЫ',
                   bg: AppColor.bg,
-                  action: Container(
-                    width: 36,
-                    height: 36,
-                    margin: EdgeInsets.only(
-                      left: 16,
-                      right: 16,
-                      top: 10,
-                    ),
-                    child: CupertinoButton(
-                      minSize: 0,
-                      padding: EdgeInsets.zero,
-                      onPressed: () {},
-                      child: Icon(
-                        Icons.add,
-                        size: 34,
-                        color: AppColor.primary.withOpacity(.3),
-                      ),
-                    ),
-                  ),
+                  // action: Container(
+                  //   width: 36,
+                  //   height: 36,
+                  //   margin: EdgeInsets.only(
+                  //     left: 16,
+                  //     right: 16,
+                  //     top: 10,
+                  //   ),
+                  //   child: CupertinoButton(
+                  //     minSize: 0,
+                  //     padding: EdgeInsets.zero,
+                  //     onPressed: () {},
+                  //     child: Icon(
+                  //       Icons.add,
+                  //       size: 34,
+                  //       color: AppColor.primary.withOpacity(.3),
+                  //     ),
+                  //   ),
+                  // ),
                 ),
                 SliverPadding(
-                  padding: EdgeInsets.only(left: 25, right: 25, bottom: 34),
+                  padding: EdgeInsets.only(
+                    left: 25,
+                    right: 25,
+                    bottom: 34,
+                  ),
                   sliver: SliverList(
                     delegate: SliverChildListDelegate(
                       [
-                        ...List.generate(viewModel.drugs.length,
-                            (index) => DrugCard(model: viewModel.drugs[index])),
+                        ...List.generate(
+                          viewModel.drugs.length,
+                          (index) => DrugCard(
+                            model: viewModel.drugs[index],
+                          ),
+                        ),
                         SizedBox(height: 18),
                         Row(
                           children: [
@@ -60,7 +68,9 @@ class DrugsView extends StatelessWidget {
                               child: Text(
                                 'Добавить ещё препараты',
                                 style: TextStyle(
-                                    fontSize: 17, color: AppColor.green),
+                                  fontSize: 17,
+                                  color: AppColor.green,
+                                ),
                               ),
                               onPressed: () {},
                             ),
@@ -77,19 +87,22 @@ class DrugsView extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [
-                      0,
-                      0.2
-                    ],
-                        colors: [
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0, 0.2],
+                    colors: [
                       AppColor.bg.withOpacity(0),
                       AppColor.bg,
-                    ])),
+                    ],
+                  ),
+                ),
                 padding: const EdgeInsets.only(
-                    left: 25, right: 25, bottom: 32, top: 12),
+                  left: 25,
+                  right: 25,
+                  bottom: 32,
+                  top: 12,
+                ),
                 child: Image.asset(AppImages.imagesAnal),
               ),
             )

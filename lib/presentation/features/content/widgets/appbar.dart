@@ -48,6 +48,7 @@ class ContentAppbar extends StatelessWidget {
         SizedBox(
           height: 40,
           child: ListView.separated(
+            physics: BouncingScrollPhysics(),
             itemCount: titles.length,
             padding: EdgeInsets.symmetric(horizontal: 24),
             scrollDirection: Axis.horizontal,

@@ -28,6 +28,7 @@ class ContentView extends StatelessWidget {
           SizedBox(height: 12),
           Expanded(
             child: ListView.separated(
+              physics: BouncingScrollPhysics(),
               itemCount: model.items.length + 1,
               padding: EdgeInsets.symmetric(
                 horizontal: 24,

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:hive/hive.dart';
+import 'package:iherb/data/models/user_model.dart';
 
 abstract class AuthLocalDataSource {
   late String key;
@@ -10,9 +11,9 @@ abstract class AuthLocalDataSource {
 
   Future<void> init();
 
-  Future<String?> getToken();
+  Future<void> saveUser(UserModel user);
+
+  Future<UserModel?> getUser();
 
   Future<void> clear();
-
-  Future<void> setToken(String token);
 }

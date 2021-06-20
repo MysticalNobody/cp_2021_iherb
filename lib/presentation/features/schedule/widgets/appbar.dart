@@ -36,6 +36,7 @@ class ScheduleAppBar extends StatelessWidget {
               SizedBox(
                 height: 67,
                 child: ListView.separated(
+                  physics: BouncingScrollPhysics(),
                   itemCount: 1000,
                   reverse: true,
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -115,6 +116,7 @@ class ScheduleAppBar extends StatelessWidget {
         SizedBox(
           height: 40,
           child: ListView.separated(
+            physics: BouncingScrollPhysics(),
             itemCount: 3,
             padding: EdgeInsets.symmetric(horizontal: 24),
             scrollDirection: Axis.horizontal,

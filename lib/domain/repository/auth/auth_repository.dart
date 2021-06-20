@@ -1,13 +1,9 @@
 import 'dart:async';
 
-import 'package:stacked/stacked.dart';
+import 'package:iherb/data/models/user_model.dart';
 
 abstract class AuthRepository {
-  Future<bool> signIn(String token);
-
-  signOut();
-
-  Future<bool> signUp(String token);
-
-  Future<String?> getToken();
+  Future<String> register(UserModel user);
+  Future<UserModel?> getUser({String id});
+  Future<void> saveUser(UserModel userModel);
 }
