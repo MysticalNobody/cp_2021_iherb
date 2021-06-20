@@ -44,7 +44,7 @@ IOS - **8**
 
 Скачать APK (Android)
 
-https://tod.itis.team/android.apk (в процессе)
+https://tod.itis.team/android.apk
 
 
 ## Сборка
