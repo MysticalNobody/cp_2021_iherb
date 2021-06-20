@@ -47,4 +47,8 @@ class Utils {
       'ВОСКРЕСЕНЬЕ',
     ][weekday - 1];
   }
+
+  static String twoDigits(int value) {
+    return value.toString().length == 1 ? '0$value' : value.toString();
+  }
 }
