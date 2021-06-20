@@ -65,7 +65,7 @@ class _MascotViewState extends State<MascotView> with TickerProviderStateMixin {
             ),
             Positioned(
               left: 50,
-              top: 400,
+              top: MediaQuery.of(context).size.height / 2.5,
               child: DragItem(
                 id: 0,
                 degRotation: 13,
@@ -77,7 +77,7 @@ class _MascotViewState extends State<MascotView> with TickerProviderStateMixin {
             ),
             Positioned(
               right: 10,
-              top: 389,
+              top: MediaQuery.of(context).size.height / 2.7,
               child: DragItem(
                 id: 1,
                 degRotation: -42,
