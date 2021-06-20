@@ -8,6 +8,7 @@ class GoodModel {
     required this.title,
     required this.price,
     required this.photo,
+    required this.url,
   });
 
   @JsonKey(name: 'Name')
@@ -16,6 +17,9 @@ class GoodModel {
   late String price;
   @JsonKey(name: 'ProductImage')
   late String photo;
+  @JsonKey(name: 'ProductUrl')
+  String url;
 
-  factory GoodModel.fromJson(Map<String, dynamic> json) => _$GoodModelFromJson(json);
+  factory GoodModel.fromJson(Map<String, dynamic> json) =>
+      _$GoodModelFromJson(json);
 }
