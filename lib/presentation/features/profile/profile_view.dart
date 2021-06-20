@@ -213,28 +213,25 @@ class ProfileView extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 30),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24),
-                      child: CupertinoButton(
-                        onPressed: () => App.router.push(MascotViewRoute()),
-                        minSize: 0,
-                        padding: EdgeInsets.zero,
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            color: AppColor.primary,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 28),
-                            child: Center(
-                              child: Text(
-                                'ТЫК',
-                                style: TextStyle(
-                                  fontSize: 19,
-                                  color: AppColor.white,
-                                  fontFamily: "Arial",
-                                ),
+                    CupertinoButton(
+                      onPressed: () => App.router.push(MascotViewRoute()),
+                      minSize: 0,
+                      padding: EdgeInsets.zero,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: AppColor.primary,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 28),
+                          child: Center(
+                            child: Text(
+                              'ТЫК',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: AppColor.white,
+                                fontFamily: "Arial",
                               ),
                             ),
                           ),
