@@ -36,11 +36,6 @@ class HomeViewModel extends BaseViewModel {
     page = value;
   }
 
-  void logOut() async {
-    log.v('Logging out ...');
-    await runBusyFuture(apiAuthService.singOut());
-  }
-
   void showSnack() {
     SnackBarUtils.show(
       message: 'Snack message',

@@ -1,5 +1,4 @@
 import 'package:iherb/data/models/article_model.dart';
-import 'package:iherb/data/models/good_model.dart';
 import 'package:iherb/data/models/product_model.dart';
 import 'package:iherb/data/models/quiz_model.dart';
 

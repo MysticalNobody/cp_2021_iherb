@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:iherb/data/models/token_response.dart';
+import 'package:iherb/data/models/user_model.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:iherb/data/models/auth_model.dart';
 
@@ -8,6 +10,13 @@ part 'auth_api.g.dart';
 abstract class AuthApi {
   factory AuthApi(Dio dio, {String baseUrl}) = _AuthApi;
 
-  @GET('auth')
-  Future<List<AuthModel>> signIn();
+  @PUT('users/register')
+  Future<TokenResponse> register(
+    @Body() UserModel userModel,
+  );
+
+  @GET('users/{id}')
+  Future<UserModel> getUser(
+    @Path('id') String id,
+  );
 }
