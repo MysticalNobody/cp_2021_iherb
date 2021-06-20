@@ -5,6 +5,7 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i1;
+import 'package:flutter/material.dart' as _i8;
 
 import '../features/home/home_view.dart' as _i4;
 import '../features/main_data_profile/main_data_profile_view.dart' as _i5;
@@ -36,8 +37,12 @@ class AppRoutes extends _i1.RootStackRouter {
       return _i1.AdaptivePage(entry: entry, child: _i6.QuestionnaireView());
     },
     MascotViewRoute.name: (entry) {
+      var args = entry.routeData
+          .argsAs<MascotViewRouteArgs>(orElse: () => MascotViewRouteArgs());
       return _i1.AdaptivePage(
-          entry: entry, child: _i7.MascotView(), fullscreenDialog: true);
+          entry: entry,
+          child: _i7.MascotView(key: args.key),
+          fullscreenDialog: true);
     }
   };
 
@@ -85,8 +90,15 @@ class QuestionnaireViewRoute extends _i1.PageRouteInfo {
   static const String name = 'QuestionnaireViewRoute';
 }
 
-class MascotViewRoute extends _i1.PageRouteInfo {
-  const MascotViewRoute() : super(name, path: '/mascot-view');
+class MascotViewRoute extends _i1.PageRouteInfo<MascotViewRouteArgs> {
+  MascotViewRoute({_i8.Key? key})
+      : super(name, path: '/mascot-view', args: MascotViewRouteArgs(key: key));
 
   static const String name = 'MascotViewRoute';
+}
+
+class MascotViewRouteArgs {
+  const MascotViewRouteArgs({this.key});
+
+  final _i8.Key? key;
 }
